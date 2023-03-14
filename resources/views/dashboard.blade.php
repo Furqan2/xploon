@@ -2,7 +2,6 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
-            <button id="refreshBtn" class="btn btn-primary float-right">Force Refresh</button>
         </h2>
 
     </x-slot>
@@ -34,6 +33,7 @@
                     </tbody>
                 </table>
             </div>
+            <button id="refreshBtn" class="btn btn-primary float-right">Force Refresh</button>
         </div>
     </div>
     <script>
