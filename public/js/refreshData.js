@@ -8,7 +8,7 @@ myButton.addEventListener('click', () => {
         .then(response => response.json())
         .then(data => {
             // Update the DOM with the data
-            var dynamicHtml = '';
+            let dynamicHtml = '';
 
             // Loop through the data and generate dynamic HTML
             $.each(data.data.headers, function(index, item) {
@@ -18,7 +18,7 @@ myButton.addEventListener('click', () => {
 
             // Update the content of the myDiv placeholder with the dynamic HTML
             $('#thUp').html(dynamicHtml);
-            var dynamicHtmlTable = '';
+            let dynamicHtmlTable = '';
 
             // Loop through the data and generate dynamic HTML
             $.each(data.data.rows, function(index, item) {
