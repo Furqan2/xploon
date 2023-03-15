@@ -8,18 +8,20 @@
 
     <div class="py-12">
         <div class="max-w-12xl mx-auto sm:px-6 lg:px-8">
+        
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <h2 class="font-semibold text-xl text-gray-1000 leading-tight text-center">This amazing table</h2>
                 <table class="table table-striped table-bordered" style="width:100%" id="table">
                     <thead>
                         <tr id="thUp">
-                            @foreach ($data->data->headers as $header)
+                            @foreach ($headers as $header)
                             <th class="text-center">{{$header}}</th>
                             @endforeach
                         </tr>
 
                     </thead>
                     <tbody id="tableBody">
-                        @foreach ($data->data->rows as $row)
+                        @foreach ($newData as $row)
                         <tr>
                             <td>{{$row->id}}</td>
                             <td>{{$row->fname}}</td>
@@ -33,8 +35,7 @@
                 </table>
                 
             </div>
-            <button id="refreshBtn" class="btn btn-primary float-right">Force Refresh</button>
+            <a href="{{ url('/dashboard', ['refresh' => true]) }}" class="btn btn-primary float-right">Force Refresh</a>
         </div>
     </div>
-    <script type="text/javascript" src="{{ URL::asset('js/refreshData.js') }}"></script>
 </x-app-layout>

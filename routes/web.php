@@ -23,12 +23,12 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', 'App\Http\Controllers\ActionController@getUserData')->name('dashboard');
+    Route::get('/getUrlData', 'App\Http\Controllers\ActionController@getUserData');
 });
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/getData', 'App\Http\Controllers\ActionController@refreshedData')->name('data');
+    Route::get('/dashboard/{refresh?}', 'App\Http\Controllers\DataController@getUserData')->name('dashboard');
 });
